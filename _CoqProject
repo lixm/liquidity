@@ -1,0 +1,40 @@
+-R theories Theroies
+theories/LibTactics.v
+theories/Automation.v
+theories/Blockchain.v
+theories/BuildUtils.v
+theories/BoundedN.v
+theories/ChainedList.v
+theories/Containers.v
+theories/ContractCommon.v
+theories/Extras.v
+theories/Finite.v
+theories/Monads.v
+theories/ResultMonad.v
+theories/OptionMonad.v
+theories/Serializable.v
+theories/ModelBase.v
+
+-R record-update RecordUpdate
+record-update/RecordSet.v
+record-update/RecordUpdate.v
+
+-R strat_liquidity StratM
+strat_liquidity/StratModel.v
+strat_liquidity/Mono.v
+strat_liquidity/Connection.v
+strat_liquidity/ProofLib.v
+strat_liquidity/examples/fundsManagement/funds_management_ok.v
+strat_liquidity/examples/fundsManagement/fdmgmt_sat_liq.v
+strat_liquidity/examples/fundsManagement/funds_management_err.v
+strat_liquidity/examples/fundsManagement/fdmgmt_nsat_liq.v
+strat_liquidity/examples/honeypots/honeypot.v
+strat_liquidity/examples/honeypots/honeypot_nsat_liq.v
+strat_liquidity/examples/escrow/escrow.v
+strat_liquidity/examples/escrow/escrow_sat_liq.v
+
+
+
+
+
+
