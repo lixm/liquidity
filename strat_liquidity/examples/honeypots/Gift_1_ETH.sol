@@ -7,12 +7,12 @@ contract Gift_1_ETH {
     bool public passHasBeenSet = false;
     bytes32 public hashPass;
 
-    // 1. 获取密码哈希
+    // 1. get passwork hash
     function GetHash(bytes memory pass) public pure returns (bytes32) {
         return keccak256(pass);
     }
 
-    // 2. 设置密码哈希（需要至少发送 1 ETH）
+    // 2. set password (hash)
     function SetPass(bytes32 hash) public payable {
         require(!passHasBeenSet, "Password has already been set");
         require(msg.value >= 1 ether, "At least 1 ETH required");
@@ -21,7 +21,7 @@ contract Gift_1_ETH {
         passHasBeenSet = true;
     }
 
-    // 3. 获取礼物（如果密码正确，转账所有ETH）
+    // 3. get the reward
     function GetGift(bytes memory pass) public returns (bytes32) {
         require(hashPass != 0, "Password not set yet");
         if (hashPass == keccak256(pass)) {
@@ -31,14 +31,14 @@ contract Gift_1_ETH {
         return keccak256(pass);
     }
 
-    // 4. 验证密码是否已设置
+    // 4. lock the password
     function PassHasBeenSet(bytes32 hash) public {
         if (hash == hashPass) {
             passHasBeenSet = true;
         }
     }
 
-    // 5. 合约的余额（查询合约的余额）
+    // 5. query the balance
     function contractBalance() public view returns (uint256) {
         return address(this).balance;
     }
